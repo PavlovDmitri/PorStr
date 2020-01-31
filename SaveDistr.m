@@ -1,0 +1,21 @@
+Psd_filename = 'PSD.xlsx';
+Psd_filename = insertBefore(Psd_filename,'.','-'+string(currentfraction));
+Psd_filename = insertBefore(Psd_filename,'.','-03-'+string(L(1))+'-'+string(porad));
+sist_filename = 'part.xlsx';
+%Psd_filename = 'PSD'+'-'+string(currentfraction)+'-03'+string(L(1))+string(porad);
+sist_filename = insertBefore(sist_filename,'.','-'+string(currentfraction));
+sist_filename = insertBefore(sist_filename,'.','-03-'+string(L(1))+'-'+string(porad));
+% Acf_filename='ACF.xlsx';
+% Acf_filename=insertBefore(Acf_filename,'.',string(timesyst));
+% Acf_filename=insertBefore(Acf_filename,'.',string(porad));
+path = cd;
+xy(1,3) = Fraction2PhaseCount;
+xy(2,3) = L(1);
+cd([path,'\1000new']);
+xlswrite(Psd_filename,xy);
+xlswrite(sist_filename,raspsphere);
+% xlswrite(Acf_filename,needacf);
+cd(path);
+%Acf_filename=insertAfter('ACF','.','xlsx');
+%Acf_filename=insertbefore(Acf_filename,'.',timesyst);
+%xlswrite(Acf_filename,needacf);9
